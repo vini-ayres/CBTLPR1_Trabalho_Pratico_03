@@ -96,7 +96,9 @@ public class Hora {
         if (this.hora >= 24) {
             this.hora %= 24;
         }
-        return String.format("%02d", this.hora) + ":" + String.format("%02d", this.min) + ":" + String.format("%02d", this.seg);
+        return String.format("%02d", this.hora) + ":" + 
+            String.format("%02d", this.min) + ":" + 
+            String.format("%02d", this.seg);
     }
     
     public String getHora2() {
@@ -108,7 +110,9 @@ public class Hora {
                 horaFormatada -= 12;
             }
         }
-        return String.format("%02d", horaFormatada) + ":" + String.format("%02d", this.min) + ":" + String.format("%02d", this.seg) + " " + periodo;
+        return String.format("%02d", horaFormatada) + ":" + 
+            String.format("%02d", this.min) + ":" + 
+            String.format("%02d", this.seg) + " " + periodo;
     }
     
     public int getSegundos() {
