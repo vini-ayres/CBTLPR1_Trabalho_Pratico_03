@@ -7,7 +7,60 @@ public class Hora {
     private int min;
     private int seg;
     
-    public Hora() {};
+    public Hora() {
+        boolean entradaValida = false;
+        while (!entradaValida) {
+            try {
+                System.out.print("Digite um valor para a(s) hora(s): ");
+                int h = sc.nextInt();
+                while (h < 0 || h > 23) {
+                    System.out.print("Horas inválidas. Por favor, digite novamente: ");
+                    h = sc.nextInt();
+                }
+                this.hora = h;
+                entradaValida = true;
+            } catch (InputMismatchException e) {
+                System.out.println("Entrada inválida. Por favor, digite um número inteiro.\n");
+                sc.next();
+            }
+        }
+
+        entradaValida = false;
+
+        while (!entradaValida) {
+            try {
+                System.out.print("Digite um valor para o(s) minuto(s): ");
+                int m = sc.nextInt();
+                while (m < 0 || m > 59) {
+                    System.out.print("Minutos inválidos. Por favor, digite novamente: ");
+                    m = sc.nextInt();
+                }
+                this.min = m;
+                entradaValida = true;
+            } catch (InputMismatchException e) {
+                System.out.print("Entrada inválida. Por favor, digite um número inteiro.\n");
+                sc.next();
+            }
+        }
+
+        entradaValida = false;
+
+        while (!entradaValida) {
+            try {
+                System.out.print("Digite um valor para o(s) segundo(s): ");
+                int s = sc.nextInt();
+                while (s < 0 || s > 59) {
+                    System.out.print("Segundos inválidos. Por favor, digite novamente: ");
+                    s = sc.nextInt();
+                }
+                this.seg = s;
+                entradaValida = true;
+            } catch (InputMismatchException e) {
+                System.out.println("Entrada inválida. Por favor, digite um número inteiro.\n");
+                sc.next();
+            }
+        }
+    }
     
     public Hora(int h, int m, int s) {
         this.hora = h;
